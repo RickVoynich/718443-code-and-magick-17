@@ -24,11 +24,11 @@ for (var i = 0; i < 4; i++) {
     name: getRandomElement(wizardNames) + ' ' + getRandomElement(wizardSurnames),
     coatColor: getRandomElement(wizardCoatColor),
     eyesColor: getRandomElement(wizardEyesColor)
-  }
+  };
   wizards.push(wizard);
-};
+}
 
-var renderWizard = function (wizard) {
+var renderWizard = function () {
   var wizardElement = wizardTemplate.cloneNode(true);
 
   wizardElement.querySelector('.setup-similar-label').textContent = wizard.name;
@@ -41,7 +41,7 @@ var renderWizard = function (wizard) {
 var fragment = document.createDocumentFragment();
 for (var j = 0; j < wizards.length; j++) {
   fragment.appendChild(renderWizard(wizards[j]));
-};
+}
 similarListElement.appendChild(fragment);
 
 var setupSimilar = userDialog.querySelector('.setup-similar');
