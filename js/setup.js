@@ -25,7 +25,6 @@ for (var i = 0; i < 4; i++) {
     coatColor: getRandomElement(wizardCoatColor),
     eyesColor: getRandomElement(wizardEyesColor)
   }
-
   wizards.push(wizard);
 };
 
@@ -40,8 +39,8 @@ var renderWizard = function (wizard) {
 };
 
 var fragment = document.createDocumentFragment();
-for (var i = 0; i < wizards.length; i++) {
-  fragment.appendChild(renderWizard(wizards[i]));
+for (var j = 0; j < wizards.length; j++) {
+  fragment.appendChild(renderWizard(wizards[j]));
 };
 similarListElement.appendChild(fragment);
 
