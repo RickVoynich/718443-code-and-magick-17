@@ -28,7 +28,7 @@ for (var i = 0; i < 4; i++) {
   wizards.push(wizard);
 }
 
-var renderWizard = function () {
+var renderWizard = function (wizard) {
   var wizardElement = wizardTemplate.cloneNode(true);
 
   wizardElement.querySelector('.setup-similar-label').textContent = wizard.name;
