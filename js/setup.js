@@ -43,12 +43,6 @@ for (var j = 0; j < wizards.length; j++) {
 }
 similarListElement.appendChild(fragment);
 
-var setupSimilar = userDialog.querySelector('.setup-similar');
-setupSimilar.classList.remove('hidden');
-
-var ESC_KEYCODE = 27;
-var ENTER_KEYCODE = 13;
-
 var coat = document.querySelector('.setup-wizard .wizard-coat');
 var eyes = document.querySelector('.setup-wizard .wizard-eyes');
 var fireball = document.querySelector('.setup-fireball-wrap');
