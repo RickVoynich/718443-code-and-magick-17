@@ -41,7 +41,6 @@
 
     var onMouseUp = function (upEvt) {
       upEvt.preventDefault();
-
       document.removeEventListener('mousemove', onMouseMove);
       document.removeEventListener('mouseup', onMouseUp);
 
@@ -52,21 +51,19 @@
         };
         dialogHandler.addEventListener('click', onClickPreventDefault);
       }
-
     };
 
     document.addEventListener('mousemove', onMouseMove);
     document.addEventListener('mouseup', onMouseUp);
   });
 
-  var ESC_KEYCODE = 27;
-  var ENTER_KEYCODE = 13;
+
   var setupOpen = document.querySelector('.setup-open');
   var setupClose = userDialog.querySelector('.setup-close');
   var setupSimilar = userDialog.querySelector('.setup-similar');
 
   var onPopupEscPress = function (evt) {
-    if (evt.keyCode === ESC_KEYCODE) {
+    if (evt.keyCode === window.util.ESC_KEYCODE) {
       closePopup();
     }
   };
@@ -89,7 +86,7 @@
   });
 
   setupOpen.addEventListener('keydown', function (evt) {
-    if (evt.keyCode === ENTER_KEYCODE) {
+    if (evt.keyCode === window.util.ENTER_KEYCODE) {
       openPopup();
     }
   });
@@ -99,41 +96,9 @@
   });
 
   setupClose.addEventListener('keydown', function (evt) {
-    if (evt.keyCode === ENTER_KEYCODE) {
+    if (evt.keyCode === window.util.ENTER_KEYCODE) {
       closePopup();
     }
-  });
-
-  var shopElement = document.querySelector('.setup-artifacts-shop');
-  var draggedItem = null;
-
-  shopElement.addEventListener('dragstart', function (evt) {
-    if (evt.target.tagName.toLowerCase() === 'img') {
-      draggedItem = evt.target;
-      evt.dataTransfer.setData('text/plain', evt.target.alt);
-    }
-  });
-
-  var artifactsElement = document.querySelector('.setup-artifacts');
-
-  artifactsElement.addEventListener('dragover', function (evt) {
-    evt.preventDefault();
-    return false;
-  });
-
-  artifactsElement.addEventListener('drop', function (evt) {
-    evt.target.style.backgroundColor = '';
-    evt.target.appendChild(draggedItem);
-  });
-
-  artifactsElement.addEventListener('dragenter', function (evt) {
-    evt.target.style.backgroundColor = 'yellow';
-    evt.preventDefault();
-  });
-
-  artifactsElement.addEventListener('dragleave', function (evt) {
-    evt.target.style.backgroundColor = '';
-    evt.preventDefault();
   });
 
 })();
