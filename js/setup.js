@@ -23,9 +23,10 @@
     var fragment = document.createDocumentFragment();
     for (var j = 0; j < number; j++) {
       fragment.appendChild(renderWizard(wizards[j]));
-    };
+    }
     similarListElement.appendChild(fragment);
   };
 
   window.backend.load(successHandler, window.util.errorHandler);
+
 })();

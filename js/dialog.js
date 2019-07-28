@@ -103,7 +103,7 @@
   var form = userDialog.querySelector('.setup-wizard-form');
 
   form.addEventListener('submit', function (evt) {
-    window.backend.save(new FormData(form), function (response) {
+    window.backend.save(new FormData(form), function () {
       closePopup();
     }, window.util.errorHandler);
     evt.preventDefault();

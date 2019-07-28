@@ -51,4 +51,5 @@
     load: load,
     save: save
   };
-  })();
+
+})();
