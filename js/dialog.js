@@ -57,7 +57,6 @@
     document.addEventListener('mouseup', onMouseUp);
   });
 
-
   var setupOpen = document.querySelector('.setup-open');
   var setupClose = userDialog.querySelector('.setup-close');
   var setupSimilar = userDialog.querySelector('.setup-similar');
@@ -99,6 +98,15 @@
     if (evt.keyCode === window.util.ENTER_KEYCODE) {
       closePopup();
     }
+  });
+
+  var form = userDialog.querySelector('.setup-wizard-form');
+
+  form.addEventListener('submit', function (evt) {
+    window.backend.save(new FormData(form), function (response) {
+      closePopup();
+    }, window.util.errorHandler);
+    evt.preventDefault();
   });
 
 })();
